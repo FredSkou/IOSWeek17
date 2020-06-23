@@ -50,9 +50,8 @@ class ViewController: UIViewController {
     override func becomeFirstResponder() ->Bool{
         return true
     }
-    // We set something to happen when the screen is shaken.
-    func shake(motion: UIEvent.EventSubtype, withEvent event: UIEvent?){
-        if(event?.subtype == UIEvent.EventSubtype.motionShake){
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
             setImage()
         }
     }
